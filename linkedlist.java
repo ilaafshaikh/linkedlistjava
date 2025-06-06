@@ -147,14 +147,6 @@ public Node findMiddle() {
 
 
 
-
-
-
-
-
-
-
-
     //singly linked list
     //add operation (add first)
 //     public void addFirst(int data){
@@ -167,19 +159,12 @@ public Node findMiddle() {
 //             return;
 //         }
 
-//         //step2:new node's next= head
-//         newNode.next=head;
+//         //step2:new node's next= head//         newNode.next=head;
 
 //         //step3:head= newNode
 //         head=newNode;
 
 //     }
-
-
-
-
-
-
 
 
 //         //added operation(addLast)
@@ -206,12 +191,6 @@ public Node findMiddle() {
 //         }
 
 
-
-
-
-
-
-
 //         //print of ll
 //         public void printList(){
 //             if(head == null){
@@ -226,18 +205,6 @@ public Node findMiddle() {
 //             }
 //             System.out.println("null");
 //         }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // //added in the miidle
@@ -264,19 +231,6 @@ public Node findMiddle() {
 
 
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // //removing the data from first
