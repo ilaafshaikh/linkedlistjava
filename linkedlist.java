@@ -7,7 +7,7 @@ public class LinkedList18{
     //     Node next;
 
     //     public Node(int data){
-    //         this.data=data;
+i    //         this.data=data;
     //         this.next=null;
     //     }
 
@@ -89,6 +89,33 @@ public class LinkedList18{
         return val;
      }
 
+// reverse the doubly linked list (clean and correct)
+public void reverse() {
+    Node curr = head;
+    Node temp = null;
+
+
+    while (curr != null) {
+        // Swap prev and next
+        temp = curr.prev;
+        curr.prev = curr.next;
+        curr.next = temp;
+
+        // Move to the next node (originally prev)
+        curr = curr.prev;
+    }
+
+    // After loop, temp will be at the old head; update head
+    if (temp != null) {
+        head = temp.prev;
+    }
+}
+
+
+
+
+
+        
 
      //reverse dll
      public void reverse(){
@@ -131,6 +158,7 @@ public Node findMiddle() {
     }
     Node slow = head;
     Node fast = head;
+
 
     while (fast != null && fast.next != null) {
         slow = slow.next;
@@ -301,7 +329,6 @@ public int getAtIndex(int index) {
 
 
 
-
 // //remove the data from first
 // public int removeFirst(){
 //     if(size == 0){   // ll is empty
@@ -322,6 +349,21 @@ public int getAtIndex(int index) {
 //     size --;
 //     return val;
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -353,7 +395,7 @@ public int getAtIndex(int index) {
 // tail=temp;
 // size--;
 // return val;
-
+:wq
 
 // }
 
