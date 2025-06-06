@@ -116,6 +116,18 @@ public class LinkedList18{
         }
         head=prev;
      }
+// addLast function for doubly linked list
+public void addLast(int data) {
+    Node newNode = new Node(data);
+    size++;
+    if (tail == null) {  // if list is empty
+        head = tail = newNode;
+        return;
+    }
+    tail.next = newNode;
+    newNode.prev = tail;
+    tail = newNode;
+}
 
 
 
@@ -991,6 +1003,3 @@ public static void main(String[] args) {
 
      }
     }
-
-
-
