@@ -90,12 +90,6 @@ public class LinkedList18{
      }
 
 
-
-
-
-
-
-
      //reverse dll
      public void reverse(){
         Node curr=head;
@@ -143,6 +137,25 @@ public Node findMiddle() {
         fast = fast.next.next;
     }
     return slow;  // slow will be at middle node
+}
+public int removeLast() {
+    if (head == null) {
+        System.out.println("DLL is empty.");
+        return Integer.MIN_VALUE;
+    }
+
+    if (size == 1) {
+        int val = head.data;
+        head = tail = null;
+        size = 0;
+        return val;
+    }
+
+    int val = tail.data;
+    tail = tail.prev;
+    tail.next = null;
+    size--;
+    return val;
 }
 
 
@@ -258,17 +271,6 @@ public Node findMiddle() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // //removing the data from last of ll
 // public int removeLast(){
 //       if(size == 0){   // ll is empty
@@ -300,18 +302,6 @@ public Node findMiddle() {
 // }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 //iterative search      O(n)
 // public int iterativesearch(int key){
 //     Node temp=head;
@@ -329,17 +319,6 @@ public Node findMiddle() {
 //     return -1;
 
 // }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -372,11 +351,6 @@ public Node findMiddle() {
 
 
 
-
-
-
-
-
 //reverse the linekd list        O(n)
 // public void reverse(){
 //     Node prev= null;
@@ -403,15 +377,6 @@ public Node findMiddle() {
 // head = prev;
 
 // }
-
-
-
-
-
-
-
-
-
 
 
 
