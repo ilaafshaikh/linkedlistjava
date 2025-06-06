@@ -128,6 +128,21 @@ public void addLast(int data) {
     newNode.prev = tail;
     tail = newNode;
 }
+// findMiddle function for doubly linked list
+public Node findMiddle() {
+    if (head == null) {
+        System.out.println("List is empty.");
+        return null;
+    }
+    Node slow = head;
+    Node fast = head;
+
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;  // slow will be at middle node
+}
 
 
 
