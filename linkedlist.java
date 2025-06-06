@@ -128,6 +128,7 @@ public void addLast(int data) {
     newNode.prev = tail;
     tail = newNode;
 }
+
 // findMiddle function for doubly linked list
 public Node findMiddle() {
     if (head == null) {
@@ -181,7 +182,7 @@ public Node findMiddle() {
 
 
 
-//         //add operation(addLast)
+//         //added operation(addLast)
 //         public void addLast(int data){
 //             //create the node
 //             Node newNode= new Node(data);
@@ -239,9 +240,9 @@ public Node findMiddle() {
 
 
 
-// //add in the miidle
+// //added in the miidle
 // public void addmiddle(int idx,int data){
-//     if(idx == 0){
+//     if(idx == 0)1{
 //         addFirst(data);
 //         return;
 //     }
@@ -278,7 +279,7 @@ public Node findMiddle() {
 
 
 
-// //remove the data from first
+// //removing the data from first
 // public int removeFirst(){
 //     if(size == 0){   // ll is empty
 //         System.out.println("ll is empty.");
