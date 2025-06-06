@@ -157,6 +157,20 @@ public int removeLast() {
     size--;
     return val;
 }
+public int search(int key) {
+    Node temp = head;
+    int index = 0;
+
+    while (temp != null) {
+        if (temp.data == key) {
+            return index;
+        }
+        temp = temp.next;
+        index++;
+    }
+
+    return -1; // not found
+}
 
 
 
