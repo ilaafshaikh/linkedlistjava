@@ -116,6 +116,33 @@ public class LinkedList18{
         }
         head=prev;
      }
+// addLast function for doubly linked list
+public void addLast(int data) {
+    Node newNode = new Node(data);
+    size++;
+    if (tail == null) {  // if list is empty
+        head = tail = newNode;
+        return;
+    }
+    tail.next = newNode;
+    newNode.prev = tail;
+    tail = newNode;
+}
+// findMiddle function for doubly linked list
+public Node findMiddle() {
+    if (head == null) {
+        System.out.println("List is empty.");
+        return null;
+    }
+    Node slow = head;
+    Node fast = head;
+
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;  // slow will be at middle node
+}
 
 
 
@@ -992,6 +1019,3 @@ public static void main(String[] args) {
 
      }
     }
-
-
-
