@@ -193,7 +193,6 @@ public int search(int key) {
 
 //     }
 
-
 //         //added operation(addLast)
 //         public void addLast(int data){
 //             //create the node
@@ -215,7 +214,25 @@ public int search(int key) {
 
 
 
-//         }
+
+
+
+
+
+// Add last (DLL)
+public void addLast(int data) {
+    Node newNode = new Node(data);
+    size++;
+    if (head == null) {
+        head = tail = newNode;
+        return;
+    }
+    tail.next = newNode;
+    newNode.prev = tail;
+    tail = newNode;
+}
+
+
 
 
 //         //print of ll
@@ -260,7 +277,32 @@ public int search(int key) {
 // }
 
 
+
 // //removing the data from first
+
+
+
+
+
+
+public int getAtIndex(int index) {
+    if (index < 0 || index >= size) {
+        System.out.println("Index out of bounds.");
+        return Integer.MIN_VALUE;
+    }
+    Node temp = head;
+    for (int i = 0; i < index; i++) {
+        temp = temp.next;
+    }
+    return temp.data;
+}
+
+
+
+
+
+
+// //remove the data from first
 // public int removeFirst(){
 //     if(size == 0){   // ll is empty
 //         System.out.println("ll is empty.");
