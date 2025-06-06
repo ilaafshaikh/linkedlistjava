@@ -94,6 +94,7 @@ public void reverse() {
     Node curr = head;
     Node temp = null;
 
+
     while (curr != null) {
         // Swap prev and next
         temp = curr.prev;
@@ -116,12 +117,88 @@ public void reverse() {
 
         
 
+     //reverse dll
+     public void reverse(){
+        Node curr=head;
+        Node prev=null;
+        Node next;
+
+        while( curr != null){
+            next=curr.next;
+            curr.next=prev;
+            curr.prev=next;
+
+            prev=curr;
+            curr=next;
 
 
 
 
+        }
+        head=prev;
+     }
+// addLast function for doubly linked list
+public void addLast(int data) {
+    Node newNode = new Node(data);
+    size++;
+    if (tail == null) {  // if list is empty
+        head = tail = newNode;
+        return;
+    }
+    tail.next = newNode;
+    newNode.prev = tail;
+    tail = newNode;
+}
+
+// findMiddle function for doubly linked list
+public Node findMiddle() {
+    if (head == null) {
+        System.out.println("List is empty.");
+        return null;
+    }
+    Node slow = head;
+    Node fast = head;
 
 
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;  // slow will be at middle node
+}
+public int removeLast() {
+    if (head == null) {
+        System.out.println("DLL is empty.");
+        return Integer.MIN_VALUE;
+    }
+
+    if (size == 1) {
+        int val = head.data;
+        head = tail = null;
+        size = 0;
+        return val;
+    }
+
+    int val = tail.data;
+    tail = tail.prev;
+    tail.next = null;
+    size--;
+    return val;
+}
+public int search(int key) {
+    Node temp = head;
+    int index = 0;
+
+    while (temp != null) {
+        if (temp.data == key) {
+            return index;
+        }
+        temp = temp.next;
+        index++;
+    }
+
+    return -1; // not found
+}
 
 
 
@@ -137,13 +214,31 @@ public void reverse() {
 //             return;
 //         }
 
-//         //step2:new node's next= head
-//         newNode.next=head;
+//         //step2:new node's next= head//         newNode.next=head;
 
 //         //step3:head= newNode
 //         head=newNode;
 
 //     }
+
+//         //added operation(addLast)
+//         public void addLast(int data){
+//             //create the node
+//             Node newNode= new Node(data);
+//             size++ ;
+//             if( head ==  null) {    //ll is empty
+//                 head=tail=newNode;
+//                 return;
+//             }
+
+
+//             //tail.next = newNode
+//             tail.next=newNode;
+
+//             //tail= newNode
+//             tail= newNode;
+
+
 
 
 
@@ -168,11 +263,6 @@ public void addLast(int data) {
 
 
 
-
-
-
-
-
 //         //print of ll
 //         public void printList(){
 //             if(head == null){
@@ -189,21 +279,9 @@ public void addLast(int data) {
 //         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// //add in the miidle
+// //added in the miidle
 // public void addmiddle(int idx,int data){
-//     if(idx == 0){
+//     if(idx == 0)1{
 //         addFirst(data);
 //         return;
 //     }
@@ -227,6 +305,8 @@ public void addLast(int data) {
 // }
 
 
+
+// //removing the data from first
 
 
 
@@ -287,6 +367,8 @@ public int getAtIndex(int index) {
 
 
 
+
+
 // //removing the data from last of ll
 // public int removeLast(){
 //       if(size == 0){   // ll is empty
@@ -318,18 +400,6 @@ public int getAtIndex(int index) {
 // }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 //iterative search      O(n)
 // public int iterativesearch(int key){
 //     Node temp=head;
@@ -347,17 +417,6 @@ public int getAtIndex(int index) {
 //     return -1;
 
 // }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -390,11 +449,6 @@ public int getAtIndex(int index) {
 
 
 
-
-
-
-
-
 //reverse the linekd list        O(n)
 // public void reverse(){
 //     Node prev= null;
@@ -421,15 +475,6 @@ public int getAtIndex(int index) {
 // head = prev;
 
 // }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -991,6 +1036,3 @@ public static void main(String[] args) {
 
      }
     }
-
-
-
