@@ -154,28 +154,19 @@ public class LinkedList18{
 
 
 
-//         //add operation(addLast)
-//         public void addLast(int data){
-//             //create the node
-//             Node newNode= new Node(data);
-//             size++ ;
-//             if( head ==  null) {    //ll is empty
-//                 head=tail=newNode;
-//                 return;
-//             }
+// Add last (DLL)
+public void addLast(int data) {
+    Node newNode = new Node(data);
+    size++;
+    if (head == null) {
+        head = tail = newNode;
+        return;
+    }
+    tail.next = newNode;
+    newNode.prev = tail;
+    tail = newNode;
+}
 
-
-//             //tail.next = newNode
-//             tail.next=newNode;
-
-//             //tail= newNode
-//             tail= newNode;
-
-
-
-
-
-//         }
 
 
 
@@ -244,7 +235,17 @@ public class LinkedList18{
 
 
 
-
+public int getAtIndex(int index) {
+    if (index < 0 || index >= size) {
+        System.out.println("Index out of bounds.");
+        return Integer.MIN_VALUE;
+    }
+    Node temp = head;
+    for (int i = 0; i < index; i++) {
+        temp = temp.next;
+    }
+    return temp.data;
+}
 
 
 
