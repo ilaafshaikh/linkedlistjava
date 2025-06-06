@@ -251,7 +251,6 @@ public int getAtIndex(int index) {
 
 
 
-
 // //remove the data from first
 // public int removeFirst(){
 //     if(size == 0){   // ll is empty
@@ -272,6 +271,8 @@ public int getAtIndex(int index) {
 //     size --;
 //     return val;
 // }
+
+
 
 
 
@@ -314,7 +315,7 @@ public int getAtIndex(int index) {
 // tail=temp;
 // size--;
 // return val;
-
+:wq
 
 // }
 
